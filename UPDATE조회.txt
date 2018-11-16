@@ -1,0 +1,8 @@
+select *
+  from gv$sql
+   where 1=1
+   and (sql_text like 'UPDATE%' OR sql_text like 'update%')
+   and parsing_schema_name = 'P1FEMADM'
+   and to_char(last_active_time,'yyyymmddhh24miss') >= '20171030083000'
+   and module in ('PL/SQL Developer', 'SQL Developer')
+--   and parsing_schema_name = 'p1femadm'
